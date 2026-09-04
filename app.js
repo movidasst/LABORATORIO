@@ -11,7 +11,9 @@
     luxometro: '#ffb600',
     gases: '#b53b4a',
     anemometro: '#2a78b8',
-    wbgt: '#e77d24'
+    wbgt: '#e77d24',
+    vibrometro: '#8b5cf6',
+    geiger: '#70ad47'
   };
 
   const FALLBACK_SIMULATORS = [
@@ -94,6 +96,38 @@
       publicada: true,
       archivada: false,
       orden: 50
+    },
+    {
+      id: 6,
+      slug: 'vibrometro-ocupacional',
+      nombre: 'Vibrómetro ocupacional',
+      descripcion: 'Explora la medición de vibraciones de mano-brazo y cuerpo entero, la selección de ejes y la interpretación inicial de la aceleración ponderada.',
+      url: null,
+      factor: 'Vibraciones',
+      medicion: 'Aceleración ponderada · m/s²',
+      icono: 'vibrometro',
+      etiquetas: ['Mano-brazo', 'Cuerpo entero', 'A(8)', 'm/s²'],
+      estado: 'Próximamente',
+      destacada: false,
+      publicada: true,
+      archivada: false,
+      orden: 60
+    },
+    {
+      id: 7,
+      slug: 'contador-geiger-muller',
+      nombre: 'Contador Geiger-Müller',
+      descripcion: 'Practica la comprobación de respuesta, el reconocimiento del fondo radiológico y la lectura de la tasa de conteo o de dosis sin confundir detección con dosimetría personal.',
+      url: null,
+      factor: 'Radiaciones ionizantes',
+      medicion: 'Tasa de conteo y de dosis · CPM, CPS, µSv/h',
+      icono: 'geiger',
+      etiquetas: ['CPM', 'CPS', 'µSv/h', 'Fondo radiológico'],
+      estado: 'Próximamente',
+      destacada: false,
+      publicada: true,
+      archivada: false,
+      orden: 70
     }
   ];
 
@@ -136,7 +170,9 @@
       luxometro: '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="17" r="8"/><path d="M24 3v4M24 27v4M10 17H6M42 17h-4M14 7l3 3M34 7l-3 3M10 34h28v10H10zM16 39h9"/></svg>',
       gases: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="8" width="28" height="34" rx="6"/><rect x="15" y="14" width="18" height="10" rx="2"/><circle cx="18" cy="32" r="2"/><circle cx="24" cy="32" r="2"/><circle cx="30" cy="32" r="2"/><path d="M19 8V4h10v4"/></svg>',
       anemometro: '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="22" r="4"/><path d="M24 18c-2-8 2-13 8-12 4 7 0 12-5 15M28 23c8-2 13 2 12 8-7 4-12 0-15-5M22 26c2 8-2 13-8 12-4-7 0-12 5-15M20 21c-8 2-13-2-12-8 7-4 12 0 15 5M24 26v17"/></svg>',
-      wbgt: '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 8a5 5 0 0 1 10 0v20a10 10 0 1 1-10 0z"/><path d="M24 12v21"/><circle cx="24" cy="35" r="4"/><path d="M35 9h7M35 15h5M35 21h7"/></svg>'
+      wbgt: '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 8a5 5 0 0 1 10 0v20a10 10 0 1 1-10 0z"/><path d="M24 12v21"/><circle cx="24" cy="35" r="4"/><path d="M35 9h7M35 15h5M35 21h7"/></svg>',
+      vibrometro: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="7" width="30" height="34" rx="6"/><rect x="14" y="12" width="20" height="12" rx="2"/><path d="M17 20l3-4 4 6 3-8 4 6M16 31h16M20 36h8"/></svg>',
+      geiger: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="7" width="32" height="34" rx="6"/><rect x="13" y="12" width="22" height="9" rx="2"/><circle cx="24" cy="31" r="3"/><path d="M24 28v-5M21.4 32.5l-4.4 2.5M26.6 32.5l4.4 2.5M14 27h4M30 27h4M14 37h8M26 37h8"/></svg>'
     };
     return icons[name] || icons.instrumento;
   }

@@ -12,7 +12,7 @@ create table if not exists public.laboratorio_simuladores (
   factor text not null check (char_length(factor) between 2 and 80),
   medicion text,
   icono text not null default 'instrumento'
-    check (icono in ('instrumento', 'sonometro', 'luxometro', 'gases', 'anemometro', 'wbgt')),
+    check (icono in ('instrumento', 'sonometro', 'luxometro', 'gases', 'anemometro', 'wbgt', 'vibrometro', 'geiger')),
   etiquetas text[] not null default '{}',
   estado text not null default 'Próximamente'
     check (estado in ('Disponible', 'Beta', 'Nueva', 'En desarrollo', 'Próximamente')),
@@ -180,7 +180,7 @@ begin
   if v_estado not in ('Disponible', 'Beta', 'Nueva', 'En desarrollo', 'Próximamente') then
     raise exception 'El estado seleccionado no es válido';
   end if;
-  if v_icono not in ('instrumento', 'sonometro', 'luxometro', 'gases', 'anemometro', 'wbgt') then
+  if v_icono not in ('instrumento', 'sonometro', 'luxometro', 'gases', 'anemometro', 'wbgt', 'vibrometro', 'geiger') then
     raise exception 'El icono seleccionado no es válido';
   end if;
 
@@ -339,6 +339,20 @@ insert into public.laboratorio_simuladores (
     null, 'Estrés térmico', 'Índice TGBH / WBGT · °C',
     'wbgt', array['TGBH', 'WBGT', 'Carga térmica'],
     'Próximamente', false, true, 50
+  ),
+  (
+    'vibrometro-ocupacional', 'Vibrómetro ocupacional',
+    'Explora la medición de vibraciones de mano-brazo y cuerpo entero, la selección de ejes y la interpretación inicial de la aceleración ponderada.',
+    null, 'Vibraciones', 'Aceleración ponderada · m/s²',
+    'vibrometro', array['Mano-brazo', 'Cuerpo entero', 'A(8)', 'm/s²'],
+    'Próximamente', false, true, 60
+  ),
+  (
+    'contador-geiger-muller', 'Contador Geiger-Müller',
+    'Practica la comprobación de respuesta, el reconocimiento del fondo radiológico y la lectura de la tasa de conteo o de dosis sin confundir detección con dosimetría personal.',
+    null, 'Radiaciones ionizantes', 'Tasa de conteo y de dosis · CPM, CPS, µSv/h',
+    'geiger', array['CPM', 'CPS', 'µSv/h', 'Fondo radiológico'],
+    'Próximamente', false, true, 70
   )
 on conflict (slug) do nothing;
 
