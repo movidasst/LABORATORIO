@@ -1,0 +1,13 @@
+.brand img,
+.site-footer img {
+  object-fit: contain !important;
+  object-position: center !important;
+  box-sizing: border-box !important;
+  padding: 4px !important;
+  border-radius: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .brand img { padding: 3px !important; }
+  .site-footer img { padding: 3px !important; }
+}
