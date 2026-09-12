@@ -13,7 +13,8 @@
     anemometro: '#2a78b8',
     wbgt: '#e77d24',
     vibrometro: '#8b5cf6',
-    geiger: '#70ad47'
+    geiger: '#70ad47',
+    aerosoles: '#009e93'
   };
 
   const FALLBACK_SIMULATORS = [
@@ -128,6 +129,22 @@
       publicada: true,
       archivada: false,
       orden: 70
+    },
+    {
+      id: 8,
+      slug: 'muestreo-aerosoles',
+      nombre: 'Muestreo de aerosoles',
+      descripcion: 'Practica la selección de la fracción, el armado del tren, la calibración del caudal, el muestreo personal y el cálculo gravimétrico de la concentración.',
+      url: 'https://aerosoles.movidasst.com',
+      factor: 'Agentes químicos · Aerosoles',
+      medicion: 'Concentración gravimétrica · mg/m³',
+      icono: 'aerosoles',
+      etiquetas: ['Inhalable', 'Respirable', 'Gravimetría', 'mg/m³'],
+      estado: 'Nueva',
+      destacada: true,
+      publicada: true,
+      archivada: false,
+      orden: 80
     }
   ];
 
@@ -172,7 +189,8 @@
       anemometro: '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="22" r="4"/><path d="M24 18c-2-8 2-13 8-12 4 7 0 12-5 15M28 23c8-2 13 2 12 8-7 4-12 0-15-5M22 26c2 8-2 13-8 12-4-7 0-12 5-15M20 21c-8 2-13-2-12-8 7-4 12 0 15 5M24 26v17"/></svg>',
       wbgt: '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 8a5 5 0 0 1 10 0v20a10 10 0 1 1-10 0z"/><path d="M24 12v21"/><circle cx="24" cy="35" r="4"/><path d="M35 9h7M35 15h5M35 21h7"/></svg>',
       vibrometro: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="7" width="30" height="34" rx="6"/><rect x="14" y="12" width="20" height="12" rx="2"/><path d="M17 20l3-4 4 6 3-8 4 6M16 31h16M20 36h8"/></svg>',
-      geiger: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="7" width="32" height="34" rx="6"/><rect x="13" y="12" width="22" height="9" rx="2"/><circle cx="24" cy="31" r="3"/><path d="M24 28v-5M21.4 32.5l-4.4 2.5M26.6 32.5l4.4 2.5M14 27h4M30 27h4M14 37h8M26 37h8"/></svg>'
+      geiger: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="7" width="32" height="34" rx="6"/><rect x="13" y="12" width="22" height="9" rx="2"/><circle cx="24" cy="31" r="3"/><path d="M24 28v-5M21.4 32.5l-4.4 2.5M26.6 32.5l4.4 2.5M14 27h4M30 27h4M14 37h8M26 37h8"/></svg>',
+      aerosoles: '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="20" width="22" height="22" rx="5"/><rect x="11" y="25" width="14" height="8" rx="2"/><path d="M14 38h8M29 27h6V14h7M35 14V9h7v5M34 21h8"/><circle cx="39" cy="29" r="2"/><circle cx="35" cy="36" r="1.5"/><circle cx="42" cy="39" r="1.5"/></svg>'
     };
     return icons[name] || icons.instrumento;
   }
