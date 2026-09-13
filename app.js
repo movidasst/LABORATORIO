@@ -29,7 +29,7 @@
       icono: 'sonometro',
       etiquetas: ['Leq', 'dB(A)', 'Octavas', '1/3 de octava'],
       estado: 'Disponible',
-      destacada: true,
+      destacada: false,
       publicada: true,
       archivada: false,
       orden: 10
@@ -93,7 +93,7 @@
       icono: 'wbgt',
       etiquetas: ['TGBH', 'WBGT', 'Carga térmica'],
       estado: 'Disponible',
-      destacada: true,
+      destacada: false,
       publicada: true,
       archivada: false,
       orden: 50
@@ -141,7 +141,7 @@
       icono: 'aerosoles',
       etiquetas: ['Inhalable', 'Respirable', 'Gravimetría', 'mg/m³'],
       estado: 'Nueva',
-      destacada: true,
+      destacada: false,
       publicada: true,
       archivada: false,
       orden: 80
@@ -157,7 +157,7 @@
       icono: 'instrumento',
       etiquetas: ['Campo eléctrico', 'Campo magnético', 'RMS', 'FFT', 'WPM'],
       estado: 'Nueva',
-      destacada: true,
+      destacada: false,
       publicada: true,
       archivada: false,
       orden: 90
@@ -300,7 +300,7 @@
 
   function createCard(simulator) {
     const card = document.createElement('article');
-    card.className = `sim-card${simulator.destacada ? ' featured' : ''}`;
+    card.className = 'sim-card';
     card.style.setProperty('--accent', ICON_ACCENTS[simulator.icono] || ICON_ACCENTS.instrumento);
 
     const top = document.createElement('div');
@@ -324,7 +324,7 @@
 
     const tags = document.createElement('div');
     tags.className = 'sim-tags';
-    (Array.isArray(simulator.etiquetas) ? simulator.etiquetas : []).slice(0, 5).forEach((tag) => tags.append(setText(document.createElement('span'), tag)));
+    (Array.isArray(simulator.etiquetas) ? simulator.etiquetas : []).slice(0, 4).forEach((tag) => tags.append(setText(document.createElement('span'), tag)));
 
     let action;
     if (isAvailable(simulator)) {
@@ -502,7 +502,6 @@
     $('simTags').value = (simulator.etiquetas || []).join(', ');
     $('simOrder').value = simulator.orden ?? 100;
     $('simPublished').checked = Boolean(simulator.publicada);
-    $('simFeatured').checked = Boolean(simulator.destacada);
     $('editorTitle').textContent = `Editar: ${simulator.nombre}`;
     $('editorMessage').textContent = '';
     $('editorSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -521,7 +520,7 @@
       etiquetas: $('simTags').value.split(',').map((tag) => tag.trim()).filter(Boolean).slice(0, 12),
       orden: Number($('simOrder').value || 100),
       publicada: $('simPublished').checked,
-      destacada: $('simFeatured').checked
+      destacada: false
     };
     if (!data.nombre || !data.factor || !data.descripcion) throw new Error('Completa el nombre, el área y la descripción.');
     if (data.url && !isHttpsUrl(data.url)) throw new Error('La dirección debe comenzar con https://');
