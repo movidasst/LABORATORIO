@@ -145,6 +145,22 @@
       publicada: true,
       archivada: false,
       orden: 80
+    },
+    {
+      id: 9,
+      slug: 'medidor-campos-electromagneticos',
+      nombre: 'Medidor de campos electromagnéticos (CEM)',
+      descripcion: 'Practica la selección de la sonda, la medición de campos eléctricos y magnéticos, el análisis RMS y FFT, y la comparación mediante WPM en escenarios ocupacionales.',
+      url: 'https://cem.movidasst.com',
+      factor: 'Campos electromagnéticos',
+      medicion: 'E, H y B · V/m, A/m, µT y mT',
+      icono: 'instrumento',
+      etiquetas: ['Campo eléctrico', 'Campo magnético', 'RMS', 'FFT', 'WPM'],
+      estado: 'Nueva',
+      destacada: true,
+      publicada: true,
+      archivada: false,
+      orden: 90
     }
   ];
 
