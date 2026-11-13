@@ -1,7 +1,7 @@
 /* Corrección definitiva del logo del Laboratorio.
    Usa el logo oficial publicado en www.movidasst.com y evita cualquier recorte. */
 img[src*="logo-movida-sst-plus"] {
-  content: url("https://www.movidasst.com/logo-oficial-movida-sst-plus.png?v=20260907-2") !important;
+  content: url("https://www.movidasst.com/logo-horizontal-movida-sst-plus.webp?v=20261113") !important;
   object-fit: contain !important;
   object-position: center !important;
   box-sizing: border-box !important;
