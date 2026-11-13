@@ -31,3 +31,5 @@ body {font-family:Inter,Outfit,ui-sans-serif,system-ui,-apple-system,"Segoe UI",
 .social-link:hover{transform:translateY(-2px);border-color:#91c9c8;box-shadow:0 9px 20px rgba(0,32,91,.12)}
 .social-link:focus-visible{outline:3px solid #007b85;outline-offset:3px}
 @media(max-width:480px){.social-links{gap:8px}.social-link{padding:9px 12px;font-size:12px;border-radius:12px}.social-link svg{width:21px;height:21px}}
+
+.social-youtube svg{color:#ff0033}
