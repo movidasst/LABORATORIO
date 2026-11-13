@@ -1,0 +1,24 @@
+/* Identidad visual Movida SST+ · noviembre 2026 */
+:root { --night:#f8fafc; --night-2:#eaf5f5; --navy:#00205b; --teal:#007b85; --cyan:#007b85; --cyan-soft:#007b85; --paper:#f8fafc; --ink:#10253a; --muted:#607386; --line:#d9e5ea; --shadow:0 12px 32px rgba(0,32,91,.09); }
+body {font-family:Inter,Outfit,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f8fafc;color:#10253a}
+.site-header {background:#fff;color:#00205b;border-bottom:1px solid #d9e5ea;box-shadow:0 3px 16px rgba(0,32,91,.05)}
+.brand img,.site-header .brand img {width:190px!important;height:64px!important;max-width:38vw;object-fit:contain!important;filter:none!important;padding:0!important}
+.brand small {color:#607386}
+.header-actions a,.header-actions button {color:#007b85;background:#edf7f7;border-color:#cce6e6}
+.header-actions a:hover,.header-actions button:hover {color:#00205b;background:#dff2f0;border-color:#007b85}
+.header-actions .admin-entry {color:#00205b;background:#f1f5f9;border-color:#d9e5ea}
+.hero {color:#00205b;background:radial-gradient(circle at 80% 30%,#d9f0ed,transparent 50%),linear-gradient(135deg,#f8fafc,#eaf5f5 70%,#f0f5e9)}
+.hero h1 em,.eyebrow {color:#007b85}
+.hero-intro {color:#415c6b}
+.hero-intro strong {color:#00205b}
+.primary-action {background:#007b85;color:#fff;box-shadow:0 10px 24px rgba(0,123,133,.18)}
+.primary-action:hover {box-shadow:0 12px 28px rgba(0,123,133,.23)}
+.hero-console {background:#fff;color:#00205b;border:1px solid #d9e5ea;box-shadow:0 16px 40px rgba(0,32,91,.09)}
+.console-top,.console-grid small {color:#607386}
+.console-top i {color:#386b20;background:#edf6e8}
+.console-grid div {background:#f8fafc;border-color:#d9e5ea}
+.console-grid strong {color:#007b85}
+.console-signal i {background:#70ad47}
+.site-footer {background:#edf5f6;color:#00205b}
+.site-footer img {width:160px!important;height:58px!important;object-fit:contain!important;padding:0!important}
+@media(max-width:640px){.site-header{gap:10px}.site-header .brand img{width:126px!important;height:48px!important;max-width:36vw}.site-footer img{width:132px!important;height:48px!important}.brand strong{font-size:14px}.brand small{font-size:10px}.hero{padding-top:42px;padding-bottom:42px}}
